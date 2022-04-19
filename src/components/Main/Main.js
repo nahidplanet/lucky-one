@@ -20,11 +20,11 @@ const [getCart,setCart] = useState([]);
     const addToCart = (additem) =>{
         const findCart = getCart.find(addItem => addItem.id === additem.id);
         if (findCart) {
-           
+            alert("This Product Already Exist...");
         }else{
         const addCart = [...getCart,additem];
             if (addCart.length > 4) {
-                
+                alert("You call Only 4 product Added...");
             }else{
                 setCart(addCart);
             }
