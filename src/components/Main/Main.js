@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Accordion from '../Accordion/Accordion';
 import CartItem from '../CartItem/CartItem';
-import Modal from '../Error/Modal';
+// import Modal from '../Error/Modal';
 import Product from '../Product/Product';
 
 
@@ -20,7 +21,7 @@ const [getCart,setCart] = useState([]);
     const addToCart = (additem) =>{
         const findCart = getCart.find(addItem => addItem.id === additem.id);
         if (findCart) {
-            alert("This Product Already Exist...");
+            alert("This Product Already Exists...");
         }else{
         const addCart = [...getCart,additem];
             if (addCart.length > 4) {
@@ -32,7 +33,6 @@ const [getCart,setCart] = useState([]);
         
     }
     const deleteToCart = (deleteItem)=>{
-        // let newCart = [];
        const exist = getCart.find(deletAnItem => deletAnItem.id === deleteItem.id);
        if (exist) {
            const rest = getCart.filter(restItem => restItem.id !== deleteItem.id);
@@ -42,6 +42,7 @@ const [getCart,setCart] = useState([]);
        }
        
     }
+ 
     return (
         <div className='main-section'>
             <div className="product-area">
@@ -58,10 +59,15 @@ const [getCart,setCart] = useState([]);
                         }
                     </div>
                 </div>
+                <div>
+                        <Accordion></Accordion>
             </div>
+            </div>
+            
             
         </div>
     );
 };
+
 
 export default Main;

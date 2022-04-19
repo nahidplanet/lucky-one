@@ -21,6 +21,10 @@
 .cart-item{
   margin: 15px 0;
 }
+.cart-container h4{
+    font-size: 15px;
+
+}
 .cart-container{
     display: flex;
     min-width: 230px;
