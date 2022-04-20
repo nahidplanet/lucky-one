@@ -12,7 +12,7 @@ const Product = ({products,handler}) => {
             </div>
             <div className="product-body">
                 <h3 className='title'>{name}</h3>
-                <h4 className='price'>Price:{price}</h4>
+                <h4 className='price'>Price: ${price}.00</h4>
                 <p className='description'>{des}</p>
             </div>
             <div className="product-footer">
