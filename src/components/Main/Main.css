@@ -18,8 +18,28 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 15px;
+    margin-bottom: 50px;
 
 }
 .modal{
     z-index:99999;
 }
+/* Large Mobile :480px. */
+@media (min-width: 320px) and (max-width: 767px){
+    .left-area {
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+   }
+   .product-area {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 35px;
+        padding-top: 50px;
+    }   
+    .main-section{
+        max-width: 776px;
+    }
+
+}
+

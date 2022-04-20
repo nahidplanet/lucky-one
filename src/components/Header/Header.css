@@ -35,7 +35,7 @@
     border-radius: 0 10px 10px 0 ;
     border: none;
     width: 80px;
-    height: 38px;
+    height: 42px;
     cursor: pointer;
     color:#fff;
     font-weight: 600;
@@ -44,4 +44,13 @@
 .search button:hover{
     background-color: #40407aa4;
 }
- 
+@media (min-width: 320px) and (max-width: 767px){
+    .Header{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-bottom:20px;
+        
+    }
+
+}

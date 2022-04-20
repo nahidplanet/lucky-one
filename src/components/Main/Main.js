@@ -46,10 +46,19 @@ const [getCart,setCart] = useState([]);
     return (
         <div className='main-section'>
             <div className="product-area">
-                <div className="left-area">
-                    {
-                        products.map( product => <Product handler={addToCart} key={product.id} products={product}></Product>)
-                    }
+                <div>
+                    <div className="left-area">
+                        
+                        {
+                            products.map( product => <Product handler={addToCart} key={product.id} products={product}></Product>)
+                        }
+                        
+                        
+                        
+                    </div>
+                    <div>
+                        <Accordion></Accordion>
+                    </div>
                 </div>
                 <div className="right-area">
                     <div className="cart-section">
@@ -59,9 +68,7 @@ const [getCart,setCart] = useState([]);
                         }
                     </div>
                 </div>
-                <div>
-                        <Accordion></Accordion>
-            </div>
+                
             </div>
             
             
