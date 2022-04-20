@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './CartItem.css';
 
 const CartItem = ({cartItem,handler}) => {
-    const {img,model} = cartItem;
+    const {img,model,color} = cartItem;
+   
     return (
-        <div className="cart-item">
-            <div className="cart-container">
-                <div className="cart-image">
+        <div className="cart-item " >
+            <div className="cart-container" style={{background:color}}>
+                <div className="cart-image" >
                     <img src={img} alt="" />
                 </div>
                 <div className="-cart-name">

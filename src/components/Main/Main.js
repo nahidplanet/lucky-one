@@ -42,19 +42,41 @@ const [getCart,setCart] = useState([]);
        }
        
     }
-    const chooseOne = ( )=>{
-        console.log("choose one");
+
+    // const [getChoose,setChoose]=useState(0);
+    /**===============================
+     *  choose one 
+     * ================================
+     * **/
+     const tryAgain = ( )=>{
+           const newCart = [];
+           setCart(newCart)
     }
-    const tryAgain = ( )=>{
-        console.log("tryAgain");
+    const chooseOne = ()=>{
+        const id = Math.floor((Math.random()*4));
+        let chooseItem;
+        let newItem;
+        if (id === getCart.indexOf(getCart[id])) {
+             chooseItem = getCart[id];
+             newItem = getCart.filter(ch=>ch.id !== chooseItem.id);
+        }
+        console.log(newItem);
+        if (newItem) {
+            chooseItem.color = "green";
+        const x = [...newItem,chooseItem];
+        setCart(x);
+        }
+   
     }
+    
+
     return (
         <div className='main-section'>
             <div className="product-area">
                 <div>
                     <div className="left-area">
                         {
-                            products.map( product => <Product handler={addToCart} key={product.id} products={product}></Product>)
+                            products.map( product => <Product handler={addToCart} key={product.id}  products={product}></Product>)
                         }    
                     </div>
                     <div>
@@ -65,7 +87,8 @@ const [getCart,setCart] = useState([]);
                     <div className="cart-section">
                         <h3 className='products-title text-center bold'>Cart</h3>
                         {
-                            getCart.map(cartItem => <CartItem  key={cartItem.id} handler={deleteToCart}  cartItem={cartItem}></CartItem>)
+                            
+                            getCart.map(cartItem => <CartItem key={cartItem.id} handler={deleteToCart}  cartItem={cartItem}></CartItem>)
                         }
                         <div className="buton">
                         <button className='chooseOne' onClick={chooseOne}>Choose One</button>
