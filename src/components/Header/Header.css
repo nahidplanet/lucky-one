@@ -44,13 +44,4 @@
 .search button:hover{
     background-color: #40407aa4;
 }
-@media (min-width: 320px) and (max-width: 767px){
-    .Header{
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        padding-bottom:20px;
-        
-    }
 
-}

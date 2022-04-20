@@ -42,19 +42,20 @@ const [getCart,setCart] = useState([]);
        }
        
     }
- 
+    const chooseOne = ( )=>{
+        console.log("choose one");
+    }
+    const tryAgain = ( )=>{
+        console.log("tryAgain");
+    }
     return (
         <div className='main-section'>
             <div className="product-area">
                 <div>
                     <div className="left-area">
-                        
                         {
                             products.map( product => <Product handler={addToCart} key={product.id} products={product}></Product>)
-                        }
-                        
-                        
-                        
+                        }    
                     </div>
                     <div>
                         <Accordion></Accordion>
@@ -62,10 +63,14 @@ const [getCart,setCart] = useState([]);
                 </div>
                 <div className="right-area">
                     <div className="cart-section">
-                        
+                        <h3 className='products-title text-center bold'>Cart</h3>
                         {
-                            getCart.map(cartItem => <CartItem key={cartItem.id} handler={deleteToCart}  cartItem={cartItem}></CartItem>)
+                            getCart.map(cartItem => <CartItem  key={cartItem.id} handler={deleteToCart}  cartItem={cartItem}></CartItem>)
                         }
+                        <div className="buton">
+                        <button className='chooseOne' onClick={chooseOne}>Choose One</button>
+                        <button className='tryAgain' onClick={tryAgain}>Try Again</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -75,6 +80,6 @@ const [getCart,setCart] = useState([]);
         </div>
     );
 };
-
+// chooseOne={chooseOne} tryAgain={tryAgain}
 
 export default Main;
